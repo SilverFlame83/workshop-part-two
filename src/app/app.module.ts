@@ -6,16 +6,20 @@ import { AppComponent } from './app.component';
 import { ContentService } from './content.service';
 import { CoreModule } from './core/core.module';
 import { ThemeComponent } from './theme/theme.component';
+import { HomeComponent } from './home/home.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeComponent
+    ThemeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    UserModule 
   ],
   providers: [
     ContentService
