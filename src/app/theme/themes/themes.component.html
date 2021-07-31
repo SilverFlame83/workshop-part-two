@@ -3,9 +3,9 @@
     <main>
         <div class="theme-title" *ngIf="themes">
             <div *ngFor="let theme of themes" class="theme-container">
-                <div class="theme-name-wrapper">
+                <div class="theme-name-wrapper" [routerLink]="['/themes', theme._id]">
                     <div class="theme-name">
-                        <a href="#" class="normal">
+                        <a class="normal">
                             <h2>{{theme.themeName}}</h2>
                         </a>
                         <div class="columns">
