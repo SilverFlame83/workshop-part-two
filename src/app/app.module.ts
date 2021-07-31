@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContentService } from './content.service';
 import { CoreModule } from './core/core.module';
-import { HomeComponent } from './home/home.component';
+import { SharedModule } from './shared/shared.module';
 import { ThemeModule } from './theme/theme.module';
 import { UserModule } from './user/user.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { UserModule } from './user/user.module';
     AppRoutingModule,
     CoreModule,
     UserModule,
+    SharedModule,
     ThemeModule
   ],
   providers: [

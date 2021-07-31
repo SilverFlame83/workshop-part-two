@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ContentService } from './content.service';
-import { IPost } from './shared/interfaces';
+import { IPost, ITheme } from './shared/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,20 @@ import { IPost } from './shared/interfaces';
 })
 export class AppComponent {
   recentPosts: IPost[] | undefined;
+  themes: ITheme[] | undefined;
 
   toggleTemplate = false;
 
   constructor(private contentService: ContentService) {
+    this.fetchThemes();
     this.fetchRecentPosts();
   }
+
+  fetchThemes(): void{
+    this.themes = undefined;
+    this.contentService.loadThemes().subscribe(themes => this.themes = themes)
+  }
+
 
   fetchRecentPosts(): void {
     this.recentPosts = undefined;
@@ -22,3 +30,7 @@ export class AppComponent {
   }
 
 }
+function fetchRecentPosts() {
+  throw new Error('Function not implemented.');
+}
+

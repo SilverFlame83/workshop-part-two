@@ -4,6 +4,8 @@ import { ThemeComponent } from './theme/theme.component';
 import { NewThemeComponent } from './new-theme/new-theme.component';
 import { ThemesComponent } from './themes/themes.component';
 import { ThemeRoutingModule } from './theme-routing.module';
+import { AsideComponent } from './aside/aside.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -11,11 +13,14 @@ import { ThemeRoutingModule } from './theme-routing.module';
   declarations: [
     ThemeComponent,
     NewThemeComponent,
-    ThemesComponent
+    ThemesComponent,
+    AsideComponent
   ],
   imports: [
     CommonModule,
-    ThemeRoutingModule
+    SharedModule,
+    ThemeRoutingModule,
+
   ]
 })
 export class ThemeModule { }

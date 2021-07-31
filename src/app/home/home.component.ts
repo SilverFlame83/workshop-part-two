@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ContentService } from '../content.service';
+import { ITheme } from '../shared/interfaces';
+import { UserService } from '../user/user.service';
 
 @Component({
-  selector: 'softuni-home',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  
+  get isLogged(): boolean{
+    return this.userService.isLogged;
   }
-
+  constructor(private userService: UserService) {}
 }
